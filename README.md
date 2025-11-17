@@ -67,15 +67,31 @@ source ~/.zshrc  # or source ~/.bashrc
 
 ### 5. Run the Agents
 
+There are two ways to run ADK agents:
+
+**Option A: Web UI (Recommended)**
+
+Run the ADK web interface from the repository root:
+
 ```bash
-# Navigate to specific agent directory
-cd day1/simple_agent
+# From the repository root directory
+adk web --port 8080
+```
 
-# Run with UV
-uv run python agent.py
+Then open your browser to `http://localhost:8080` and select the agent you want to interact with.
 
-# Or with activated virtual environment
-python agent.py
+**Option B: Command Line**
+
+Run a specific agent directly:
+
+```bash
+# From the repository root directory
+adk run day1/simple_agent
+
+# Or specify a different agent
+adk run day1/multi_agent
+adk run day1/parallel_agents
+adk run day1/assembly_line_agent
 ```
 
 ## Project Structure
@@ -116,8 +132,8 @@ A basic agent that demonstrates core ADK functionality with Google Search integr
 
 **Run:**
 ```bash
-cd day1/simple_agent
-uv run python agent.py
+# From repository root
+adk run day1/simple_agent
 ```
 
 ### Multi-Agent System
@@ -125,8 +141,8 @@ Demonstrates coordination between multiple specialized agents.
 
 **Run:**
 ```bash
-cd day1/multi_agent
-uv run python agent.py
+# From repository root
+adk run day1/multi_agent
 ```
 
 ### Parallel Agents
@@ -134,8 +150,8 @@ Shows how to run multiple agents concurrently for improved performance.
 
 **Run:**
 ```bash
-cd day1/parallel_agents
-uv run python agent.py
+# From repository root
+adk run day1/parallel_agents
 ```
 
 ### Assembly Line Agent
@@ -143,8 +159,8 @@ Implements a sequential pipeline where agents process information in stages.
 
 **Run:**
 ```bash
-cd day1/assembly_line_agent
-uv run python agent.py
+# From repository root
+adk run day1/assembly_line_agent
 ```
 
 ## Dependencies
